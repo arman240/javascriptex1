@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorting Hat</title>
+</head>
+<body>
+
+<script>
+  // Prompt for the student's name
+  var studentName = prompt("Enter your name:");
+
+  // Use Math.random() to draw a value (1, 2, 3, or 4)
+  var randomValue = Math.floor(Math.random() * 4) + 1;
+
+  // Sorting hat logic using if-else structure
+  var house;
+  if (randomValue === 1) {
+    house = "Gryffindor";
+  } else if (randomValue === 2) {
+    house = "Slytherin";
+  } else if (randomValue === 3) {
+    house = "Hufflepuff";
+  } else {
+    house = "Ravenclaw";
+  }
+
+  // Display the result in the HTML document
+  document.write("<p>" + studentName + ", you are in " + house + ".</p>");
+</script>
+
+</body>
+</html>

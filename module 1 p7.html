@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dice Roller</title>
+</head>
+<body>
+
+<script>
+  // Prompt for the number of dice rolls
+  var numberOfRolls = prompt("Enter the number of dice rolls:");
+
+  // Convert the input to a number
+  numberOfRolls = parseInt(numberOfRolls);
+
+  // Function to simulate rolling a six-sided die
+  function rollDie() {
+    return Math.floor(Math.random() * 6) + 1;
+  }
+
+  // Perform dice rolls and calculate the sum
+  var sum = 0;
+  for (var i = 0; i < numberOfRolls; i++) {
+    var rollResult = rollDie();
+    sum += rollResult;
+    console.log("Roll " + (i + 1) + ": " + rollResult);
+  }
+
+  // Print the sum in the HTML document
+  document.write("<p>Sum of dice rolls: " + sum + "</p>");
+</script>
+
+</body>
+</html>

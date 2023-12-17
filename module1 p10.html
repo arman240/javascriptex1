@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dice Probability Calculator</title>
+</head>
+<body>
+
+<script>
+  // Prompt for the number of dice and desired sum
+  var numDice = prompt("Enter the number of dice:");
+  var targetSum = prompt("Enter the desired sum of eye numbers:");
+
+  // Convert the inputs to numbers
+  numDice = parseInt(numDice);
+  targetSum = parseInt(targetSum);
+
+  // Function to simulate rolling a six-sided die
+  function rollDie() {
+    return Math.floor(Math.random() * 6) + 1;
+  }
+
+  // Simulate rolling the dice for a specified number of repetitions
+  var successfulOutcomes = 0;
+  var totalRepetitions = 10000;  // You can adjust this number for more or fewer simulations
+
+  for (var i = 0; i < totalRepetitions; i++) {
+    var sum = 0;
+    for (var j = 0; j < numDice; j++) {
+      sum += rollDie();
+    }
+    if (sum === targetSum) {
+      successfulOutcomes++;
+    }
+  }
+
+  // Calculate the probability
+  var probability = (successfulOutcomes / totalRepetitions) * 100;
+
+  // Display the result in the HTML document
+  document.write("<p>Probability to get sum " + targetSum + " with " + numDice + " dice is " + probability.toFixed(2) + "%</p>");
+</script>
+
+</body>
+</html>

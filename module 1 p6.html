@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Square Root Calculator</title>
+</head>
+<body>
+
+<script>
+  // Display a confirmation window
+  var shouldCalculate = confirm("Should I calculate the square root?");
+
+  // Check user's choice
+  if (shouldCalculate) {
+    // Prompt for the number
+    var inputNumber = prompt("Enter a number:");
+
+    // Convert the input to a number
+    var number = parseFloat(inputNumber);
+
+    // Check if the number is negative
+    if (number < 0) {
+      document.write("<p>The square root of a negative number is not defined.</p>");
+    } else {
+      // Calculate and display the square root
+      var squareRoot = Math.sqrt(number);
+      document.write("<p>The square root of " + number + " is: " + squareRoot + "</p>");
+    }
+  } else {
+    // User chose not to calculate the square root
+    document.write("<p>The square root is not calculated.</p>");
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leap Year List</title>
+</head>
+<body>
+
+<script>
+  // Prompt for the start and end years
+  var startYear = prompt("Enter the start year:");
+  var endYear = prompt("Enter the end year:");
+
+  // Convert the input to numbers
+  startYear = parseInt(startYear);
+  endYear = parseInt(endYear);
+
+  // Function to check if a year is a leap year
+  function isLeapYear(year) {
+    return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+  }
+
+  // Display leap years in an unordered list
+  document.write("<ul>");
+  for (var year = startYear; year <= endYear; year++) {
+    if (isLeapYear(year)) {
+      document.write("<li>" + year + "</li>");
+    }
+  }
+  document.write("</ul>");
+</script>
+
+</body>
+</html>
